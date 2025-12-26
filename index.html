@@ -4,31 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedScale IT | Digitalizing the Medical Supply Chain</title>
+    <!-- Added Tailwind v4 CDN and modern fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        /* Added colorful mesh gradients and modern typography */
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .bg-mesh {
+            background-color: #020617;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.25) 0px, transparent 55%),
+                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.25) 0px, transparent 55%),
+                radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.25) 0px, transparent 55%),
+                radial-gradient(at 0% 100%, rgba(236, 72, 153, 0.25) 0px, transparent 55%);
+        }
         .text-balance { text-wrap: balance; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        @keyframes gradient-x {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient-x {
+            background: linear-gradient(270deg, #00BFFF, #00FF7F, #FFFF00, #FF69B4);
+            background-size: 400% 400%;
+            animation: gradient-x 15s ease infinite;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-[#020617] text-slate-200">
 
-    <!-- Header -->
-    <header class="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
-        <div class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-            <div class="flex items-center gap-2">
-                <div class="h-8 w-8 rounded bg-blue-600 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+    <!-- Updated Header to be modern and vibrant -->
+    <header class="sticky top-0 z-50 w-full border-b border-white/10 bg-[#020617]/80 backdrop-blur-md">
+        <div class="container mx-auto flex h-20 items-center justify-between px-6">
+            <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-blue-500 via-emerald-400 to-amber-400 p-[2px]">
+                    <div class="flex h-full w-full items-center justify-center rounded-[10px] bg-[#020617]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                    </div>
                 </div>
-                <span class="text-xl font-bold tracking-tight text-slate-900">MedScale IT</span>
+                <span class="text-2xl font-extrabold tracking-tight text-white italic">MedScale<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">IT</span></span>
             </div>
-            <nav class="hidden md:flex gap-8">
-                <a href="#solutions" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Solutions</a>
-                <a href="#process" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Our Process</a>
-                <a href="#about" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">About</a>
+            <nav class="hidden lg:flex gap-10">
+                <a href="#solutions" class="text-sm font-semibold text-slate-400 hover:text-white transition-all">Solutions</a>
+                <a href="#process" class="text-sm font-semibold text-slate-400 hover:text-white transition-all">Process</a>
+                <a href="#why-us" class="text-sm font-semibold text-slate-400 hover:text-white transition-all">Why Us</a>
             </nav>
             <div class="flex items-center gap-4">
-                <a href="#contact" class="hidden sm:inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-6 text-sm font-medium text-white shadow transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-400">
+                <a href="#contact" class="hidden sm:inline-flex h-11 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-emerald-600 px-8 text-sm font-bold text-white shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:scale-105 transition-transform">
                     Get Started
                 </a>
             </div>
@@ -36,112 +63,167 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="relative overflow-hidden bg-slate-900 py-24 lg:py-32">
-            <div class="absolute inset-0 opacity-20">
-                <img src="/professional-medical-warehouse-operation-digitaliz.jpg" alt="Medical Supply Chain background" class="h-full w-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
-            </div>
-            <div class="container relative mx-auto px-4 md:px-6">
-                <div class="max-w-3xl space-y-8">
-                    <div class="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-sm font-medium text-blue-400">
-                        Enterprise IT for Medical Distributors
+        <!-- Redesigned Hero with colorful gradients and high-energy feel -->
+        <section class="relative min-h-[90vh] flex items-center overflow-hidden bg-mesh pt-20 pb-32">
+            <div class="container relative mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-10">
+                        <div class="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-blue-400">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                            </span>
+                            Supply Chain Evolution
+                        </div>
+                        <h1 class="text-6xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-9xl leading-[1.1]">
+                            Digitalize <br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 via-emerald-400 via-amber-400 to-pink-500 animate-gradient-x">Your Impact.</span>
+                        </h1>
+                        <p class="text-xl text-slate-400 max-w-xl leading-relaxed">
+                            B2B IT infrastructure for medical distributors. We don't just build software; we architect the digital future of medical logistics.
+                        </p>
+                        <div class="flex flex-wrap gap-5">
+                            <a href="#contact" class="group relative inline-flex h-14 items-center justify-center rounded-2xl bg-white px-10 text-lg font-bold text-slate-900 shadow-xl transition-all hover:bg-slate-100 hover:-translate-y-1">
+                                Launch Project
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                            </a>
+                        </div>
                     </div>
-                    <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl text-balance">
-                        Digitalizing the Medical Supply Chain for <span class="text-blue-500">Maximum Efficiency</span>
-                    </h1>
-                    <p class="text-lg text-slate-300 md:text-xl text-pretty max-w-2xl">
-                        End-to-end IT solutions designed for medical dealers and manufacturers. Automate sales, optimize inventory, and accelerate cash flow with enterprise-grade technology.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="inline-flex h-12 items-center justify-center rounded-md bg-blue-600 px-8 text-base font-medium text-white shadow transition-colors hover:bg-blue-700">
-                            Schedule a Consultation
-                        </a>
-                        <a href="#solutions" class="inline-flex h-12 items-center justify-center rounded-md border border-slate-700 bg-slate-800 px-8 text-base font-medium text-white shadow-sm transition-colors hover:bg-slate-700">
-                            Explore Solutions
-                        </a>
+                    <div class="relative hidden lg:block">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-emerald-500 opacity-20 blur-3xl rounded-full animate-pulse"></div>
+                        <div class="relative glass-card rounded-3xl p-8 border-white/20 shadow-2xl">
+                            <div class="flex items-center justify-between mb-8">
+                                <div class="flex gap-2">
+                                    <div class="h-3 w-3 rounded-full bg-red-500"></div>
+                                    <div class="h-3 w-3 rounded-full bg-amber-500"></div>
+                                    <div class="h-3 w-3 rounded-full bg-emerald-500"></div>
+                                </div>
+                                <span class="text-xs font-mono text-slate-500">v1.2.0-stable</span>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="h-4 w-3/4 rounded-full bg-white/10"></div>
+                                <div class="h-4 w-1/2 rounded-full bg-white/10"></div>
+                                <div class="grid grid-cols-2 gap-4 pt-4">
+                                    <div class="h-24 rounded-2xl bg-gradient-to-br from-blue-500/20 to-transparent border border-blue-500/20 flex flex-col items-center justify-center">
+                                        <span class="text-2xl font-bold text-blue-400">+142%</span>
+                                        <span class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Efficiency</span>
+                                    </div>
+                                    <div class="h-24 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-transparent border border-emerald-500/20 flex flex-col items-center justify-center">
+                                        <span class="text-2xl font-bold text-emerald-400">-38%</span>
+                                        <span class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">DSO</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Solutions Grid -->
-        <section id="solutions" class="py-24 bg-white">
-            <div class="container mx-auto px-4 md:px-6">
-                <div class="text-center mb-16 space-y-4">
-                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Our Core Solutions</h2>
-                    <p class="mx-auto max-w-[700px] text-slate-500 md:text-lg">
-                        Specialized modules built to solve the unique complexities of medical logistics and B2B sales.
-                    </p>
+        <!-- Added a new vibrant Metrics Section -->
+        <section class="py-20 bg-white/5 border-y border-white/5 backdrop-blur-sm">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center space-y-2">
+                        <div class="text-4xl md:text-5xl font-black text-blue-400">99.9%</div>
+                        <div class="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-500">Uptime SLA</div>
+                    </div>
+                    <div class="text-center space-y-2">
+                        <div class="text-4xl md:text-5xl font-black text-emerald-400">2.4s</div>
+                        <div class="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-500">Avg Response</div>
+                    </div>
+                    <div class="text-center space-y-2">
+                        <div class="text-4xl md:text-5xl font-black text-amber-400">500M+</div>
+                        <div class="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-500">Data Points</div>
+                    </div>
+                    <div class="text-center space-y-2">
+                        <div class="text-4xl md:text-5xl font-black text-pink-400">24/7</div>
+                        <div class="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-500">Global Support</div>
+                    </div>
                 </div>
-                <div class="grid gap-8 md:grid-cols-3">
-                    <!-- Order & Sales -->
-                    <div class="group relative overflow-hidden rounded-xl border bg-slate-50 p-8 transition-all hover:shadow-lg">
-                        <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+        </section>
+
+        <!-- Colorful Solutions Section -->
+        <section id="solutions" class="py-32 relative">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
+                    <div class="max-w-2xl">
+                        <h2 class="text-4xl font-extrabold tracking-tight text-white mb-6">Built for the <br/><span class="text-blue-500">Medical Ecosystem</span></h2>
+                        <p class="text-lg text-slate-400">Enterprise-grade modules designed to solve the friction in medical logistics and sales cycles.</p>
+                    </div>
+                    <div class="h-[2px] flex-grow bg-gradient-to-r from-blue-500/50 via-emerald-500/50 to-transparent hidden lg:block mb-4"></div>
+                </div>
+                
+                <div class="grid gap-10 md:grid-cols-3">
+                    <!-- Order Automation -->
+                    <div class="group glass-card p-10 rounded-[2.5rem] transition-all hover:bg-white/5 hover:-translate-y-2">
+                        <div class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-blue-400 shadow-[0_0_30px_rgba(37,99,235,0.4)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold text-slate-900">Order & Sales Automation</h3>
-                        <p class="text-slate-600">Unified CRM and order management tailored for medical sales cycles, equipment leasing, and recurring consumable orders.</p>
+                        <h3 class="mb-4 text-2xl font-extrabold text-white">Sales Velocity</h3>
+                        <p class="text-slate-400 leading-relaxed">Unified CRM and order management tailored for recurring consumable cycles and high-value equipment leasing.</p>
                     </div>
 
                     <!-- Inventory -->
-                    <div class="group relative overflow-hidden rounded-xl border bg-slate-50 p-8 transition-all hover:shadow-lg">
-                        <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                    <div class="group glass-card p-10 rounded-[2.5rem] transition-all hover:bg-white/5 hover:-translate-y-2">
+                        <div class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-400 shadow-[0_0_30px_rgba(16,185,129,0.4)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold text-slate-900">Inventory Planning</h3>
-                        <p class="text-slate-600">Smart stock management with real-time tracking of expiration dates, batch numbers, and predictive reordering logic.</p>
+                        <h3 class="mb-4 text-2xl font-extrabold text-white">Smart Inventory</h3>
+                        <p class="text-slate-400 leading-relaxed">Real-time tracking of expiration dates and batch numbers with predictive logic to eliminate stockouts.</p>
                     </div>
 
                     <!-- Cash Flow -->
-                    <div class="group relative overflow-hidden rounded-xl border bg-slate-50 p-8 transition-all hover:shadow-lg">
-                        <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/><path d="M2 12h20"/><path d="m5 7 3 5-3 5"/><path d="m19 7-3 5 3 5"/></svg>
+                    <div class="group glass-card p-10 rounded-[2.5rem] transition-all hover:bg-white/5 hover:-translate-y-2">
+                        <div class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-600 to-amber-400 shadow-[0_0_30px_rgba(245,158,11,0.4)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/><path d="M2 12h20"/></svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold text-slate-900">Cash Flow Optimization</h3>
-                        <p class="text-slate-600">Streamlined AR/AP workflows, automated invoicing, and deep financial analytics to reduce Days Sales Outstanding (DSO).</p>
+                        <h3 class="mb-4 text-2xl font-extrabold text-white">Cash Engine</h3>
+                        <p class="text-slate-400 leading-relaxed">Automated invoicing and financial analytics designed to reduce DSO and accelerate your revenue cycle.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section id="contact" class="py-24 bg-blue-600 text-white">
-            <div class="container mx-auto px-4 md:px-6 text-center">
-                <div class="mx-auto max-w-2xl space-y-6">
-                    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Ready to Scale Your IT Infrastructure?</h2>
-                    <p class="text-lg text-blue-100">
-                        Join the leading medical distributors who have transformed their operations with MedScale IT.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-                        <button class="inline-flex h-12 items-center justify-center rounded-md bg-white px-8 text-base font-semibold text-blue-600 shadow-sm transition-colors hover:bg-blue-50">
-                            Contact Our Experts
-                        </button>
-                        <button class="inline-flex h-12 items-center justify-center rounded-md border border-blue-400 bg-blue-500/50 px-8 text-base font-semibold text-white shadow-sm transition-colors hover:bg-blue-500">
-                            Download Case Studies
-                        </button>
+        <!-- High-Contrast CTA Section -->
+        <section id="contact" class="py-32">
+            <div class="container mx-auto px-6">
+                <div class="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-blue-600 via-blue-700 to-emerald-700 p-12 md:p-24 text-center">
+                    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+                    <div class="relative max-w-4xl mx-auto space-y-10">
+                        <h2 class="text-4xl md:text-6xl font-black text-white leading-tight">Ready to architect your <br/><span class="italic text-amber-300">digital transformation?</span></h2>
+                        <p class="text-xl text-blue-100 font-medium">Join 50+ medical distributors scaling with MedScale IT.</p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-6 pt-6">
+                            <button class="h-16 px-12 rounded-2xl bg-white text-blue-700 font-bold text-lg shadow-2xl hover:scale-105 transition-transform">
+                                Book Executive Briefing
+                            </button>
+                            <button class="h-16 px-12 rounded-2xl border-2 border-white/30 bg-white/10 text-white font-bold text-lg backdrop-blur-md hover:bg-white/20 transition-all">
+                                View Case Studies
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t bg-slate-900 py-12 text-slate-400">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
-                <div class="flex items-center gap-2">
-                    <div class="h-6 w-6 rounded bg-blue-600 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+    <!-- Updated Footer to be modern and dark -->
+    <footer class="border-t border-white/5 bg-[#010409] py-20 text-slate-500">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+                <div class="flex items-center gap-3">
+                    <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
                     </div>
-                    <span class="text-lg font-bold text-white">MedScale IT</span>
+                    <span class="text-xl font-extrabold text-white tracking-tighter italic">MedScaleIT</span>
                 </div>
-                <p class="text-sm">© 2025 MedScale IT Solutions. All rights reserved.</p>
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms</a>
-                    <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <div class="flex gap-10 font-bold text-sm tracking-widest uppercase">
+                    <a href="#" class="hover:text-blue-400 transition-colors">Twitter</a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors">LinkedIn</a>
+                    <a href="#" class="hover:text-amber-400 transition-colors">Github</a>
                 </div>
+                <p class="text-xs font-mono uppercase tracking-[0.2em]">© 2025 Architecture by MedScale IT</p>
             </div>
         </div>
     </footer>
